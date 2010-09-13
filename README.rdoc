@@ -1,6 +1,60 @@
 = breadcrumbs_for
 
-Description goes here.
+Breadcrumbs for Rails made right.
+
+== Installation
+ gem install breadcrumbs_for
+
+== Requirements
+ Was tested with Rails 3.0.0
+
+== Usage
+Let say:
+* You have a Blog and Post models in your app.
+* Posts are nested in Blogs.
+* You have :admin namespace to manage them.
+* Blog and Post have a 'title' or 'name' methods
+
+Examples:
+ breadcrumbs_for :blogs                         # Home / Blogs
+ breadcrumbs_for :blogs, 'new'                  # Home / Blogs / New
+ breadcrumbs_for :blogs, @blog                  # Home / Blogs / My blog
+ breadcrumbs_for :blogs, @blog, 'edit'          # Home / Blogs / My blog / Edit
+ breadcrumbs_for @blog                          # Home / My blog
+ breadcrumbs_for :blogs, @blog, [@blog, @post]  # Home / Blogs / My blog / My Post
+
+ breadcrumbs_for [:admin,:blogs], [:admin, @blog]
+ breadcrumbs_for [:admin,:blogs], ['edit', :admin, @blog, @post]
+ breadcrumbs_for [:admin,:blogs], [:admin, @blog], ['edit', :admin, @blog, @post]
+
+etc.
+
+Note: There is a shorter alias crumbs_for, so you can do:
+ crumbs_for :blogs, @blog
+
+If you have an admin_path in your routes you can do:
+ breadcrumbs_for :admin, [:admin,:blogs], ['new', :admin, @blog], :crumbs_options=>{:root=>false}
+
+=== Customize:
+* Don't inculde the Home(root) link:
+ breadcrumbs_for :blogs, @blog, :crumbs_options=>{:root=>false}
+* By default breadcrumbs are rendered as a ul(html unorderd list). You can disable this:
+ breadcrumbs_for :blogs, @blog, :crumbs_options=>{:type=>:plain}
+* The default separator is /. Chage it:
+ breadcrumbs_for :blogs, @blog, :crumbs_options=>{:sep=>'&rarr;'}
+
+=== Custom captions and i18n
+Define captions for breadcrumbs in your locale file:
+ en:
+  breadcrumbs:
+    root: 'Home'
+    actions:
+      new: 'Add new'
+      edit: 'Edit one'
+    names:
+      admin: 'Manage'
+      blogs: 'The blogs'
+      posts: 'The posts'
 
 == Note on Patches/Pull Requests
  

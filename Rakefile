@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "breadcrumbs_for"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Breadcrumbs for Rails made right.}
+    gem.description = %Q{Breadcrumbs for Rails done in a rails way. Built on url_for, your routes and i18n.}
     gem.email = "naumovmail@gmail.com"
     gem.homepage = "http://github.com/naumov/breadcrumbs_for"
     gem.authors = ["Dmitry Naumov"]
