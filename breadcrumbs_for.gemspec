@@ -23,6 +23,8 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "breadcrumbs_for.gemspec",
+     "init.rb",
      "lib/breadcrumbs_for.rb",
      "test/helper.rb",
      "test/test_breadcrumbs_for.rb"
