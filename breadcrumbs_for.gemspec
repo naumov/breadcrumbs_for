@@ -5,38 +5,36 @@
 
 Gem::Specification.new do |s|
   s.name = %q{breadcrumbs_for}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dmitry Naumov"]
-  s.date = %q{2010-09-13}
+  s.date = %q{2010-10-30}
   s.description = %q{Breadcrumbs for Rails done in a rails way. Built on url_for, your routes and i18n.}
   s.email = %q{naumovmail@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+    "README.rdoc"
   ]
   s.files = [
     ".document",
-     ".gitignore",
-     "LICENSE",
-     "README.rdoc",
-     "Rakefile",
-     "VERSION",
-     "breadcrumbs_for.gemspec",
-     "init.rb",
-     "lib/breadcrumbs_for.rb",
-     "test/helper.rb",
-     "test/test_breadcrumbs_for.rb"
+    "LICENSE",
+    "README.rdoc",
+    "Rakefile",
+    "VERSION",
+    "breadcrumbs_for.gemspec",
+    "init.rb",
+    "lib/breadcrumbs_for.rb",
+    "test/helper.rb",
+    "test/test_breadcrumbs_for.rb"
   ]
   s.homepage = %q{http://github.com/naumov/breadcrumbs_for}
-  s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Breadcrumbs for Rails made right.}
   s.test_files = [
     "test/helper.rb",
-     "test/test_breadcrumbs_for.rb"
+    "test/test_breadcrumbs_for.rb"
   ]
 
   if s.respond_to? :specification_version then
