@@ -73,14 +73,14 @@ module BreadcrumbsFor
     if crumb.size>1
       case crumb.first.class.to_s
         when 'Symbol' # Is a namespace. Skip it
-          cramb_caption(crumb.last)
+          crumb_to_caption(crumb.last)
         when 'String' # Is an action name. Use it
           string_to_caption(crumb.first) << ' ' << cramb_caption(crumb.last)
         else # Use last item only
-          cramb_caption(crumb.last)
+          cramb_to_caption(crumb.last)
       end
     else
-      cramb_caption(crumb[0])
+      cramb_to_caption(crumb[0])
     end
   end
 
