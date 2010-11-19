@@ -66,7 +66,7 @@ module BreadcrumbsFor
 
   def symbol_caption crumb
     return root_caption if crumb == :root
-    t("breadcrumbs.names.#{crumb.to_s}", :default => crumb.to_s.capitalize)
+    t("breadcrumbs.names.#{crumb.to_s}", :default => crumb.to_s.gsub('_',' ').capitalize)
   end
 
   def array_to_caption crumb
