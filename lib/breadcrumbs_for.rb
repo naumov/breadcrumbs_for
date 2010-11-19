@@ -75,7 +75,7 @@ module BreadcrumbsFor
         when 'Symbol' # Is a namespace. Skip it
           crumb_to_caption(crumb.last)
         when 'String' # Is an action name. Use it
-          string_to_caption(crumb.first) << ' ' << cramb_caption(crumb.last)
+          string_to_caption(crumb.first) << ' ' << crumb_caption(crumb.last)
         else # Use last item only
           cramb_to_caption(crumb.last)
       end
@@ -95,11 +95,11 @@ module BreadcrumbsFor
       when 'Hash'
         crumb.delete(:crumb)
       else
-        cramb_caption(crumb)
+        crumb_caption(crumb)
     end
   end
 
-  def cramb_caption obj, method='name'
+  def crumb_caption obj, method='name'
     [method,'name','title'].each do |name_method|
       if obj.respond_to?(name_method)
         was_method       = "#{name_method}_was"
