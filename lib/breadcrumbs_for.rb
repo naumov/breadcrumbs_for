@@ -99,14 +99,16 @@ module BreadcrumbsFor
     end
   end
 
-  def cramb_caption crumb
-    if crumb.respond_to?(:title)
-      crumb.title
-    elsif crumb.respond_to?(:name)
-      crumb.name
-    else
-      crumb.class.to_s.humanize
+  def cramb_caption obj, method='name'
+    [method,'name','title'].each do |name_method|
+      if obj.respond_to?(name_method)
+        was_method       = "#{name_method}_was"
+        changed_method   = "#{name_method}_changed?"
+        tracking_enabled = obj.respond_to?(was_method) && obj.respond_to?(changed_method)
+        return (tracking_enabled && obj.send(changed_method)) ? obj.send(was_method) : obj.send(method.to_s)
+      end
     end
+    crumb.class.to_s.humanize
   end
 end
 
