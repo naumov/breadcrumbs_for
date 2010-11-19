@@ -7,7 +7,7 @@ module BreadcrumbsFor
     list.each_with_index do |crumb,index|
       caption = crumb_to_caption(crumb)
       is_last_crumb = ((index+1) == crumbs_count)
-      item = is_last_crumb ? caption : crumb_link(caption, url_for(crumb))
+      item = crumb.is_a?(String) ? caption : crumb_link(caption, url_for(crumb))
       crumbs << crumb_html(item,options,is_last_crumb ? 'active' : nil)
     end
     crumbs_html(crumbs,options)
