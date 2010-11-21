@@ -105,7 +105,7 @@ module BreadcrumbsFor
         was_method       = "#{name_method}_was"
         changed_method   = "#{name_method}_changed?"
         tracking_enabled = obj.respond_to?(was_method) && obj.respond_to?(changed_method)
-        return (tracking_enabled && obj.send(changed_method)) ? obj.send(was_method) : obj.send(method.to_s)
+        return (tracking_enabled && obj.send(changed_method)) ? obj.send(was_method) : obj.send(name_method.to_s)
       end
     end
     crumb.class.to_s.humanize
