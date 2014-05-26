@@ -61,12 +61,12 @@ module BreadcrumbsFor
   end
 
   def string_to_caption crumb
-    t("breadcrumbs.actions.#{crumb.to_s}", :default => crumb.to_s.capitalize)
+    t("breadcrumbs.actions.#{crumb.to_s}", :default => crumb.to_s.titleize)
   end
 
   def symbol_caption crumb
     return root_caption if crumb == :root
-    t("breadcrumbs.names.#{crumb.to_s}", :default => crumb.to_s.gsub('_',' ').capitalize)
+    t("breadcrumbs.names.#{crumb.to_s}", :default => crumb.to_s.gsub('_',' ').titleize)
   end
 
   def array_to_caption crumb
